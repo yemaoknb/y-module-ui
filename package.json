@@ -1,0 +1,92 @@
+{
+    "name": "vue-y-module",
+    "version": "1.0.2",
+    "description": "",
+    "main": "lib/vue-y-module.common.js",
+    "scripts": {
+        "c": "git add . && git-cz && git push",
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "eslint --fix --ext .js,.vue src",
+        "format": "prettier --write \"src/**/*.js\" \"src/**/*.vue\"",
+        "package": "vue-cli-service build --target lib --name vue-y-module --dest lib --entry src/index.js",
+        "push": "npm publish",
+		"update": "git add -A && git commit -m \"更新插件\" && git pull && git push",
+        "remove": "rimraf node_modules"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "npm run lint"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.{js,json,css,vue}": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "dependencies": {
+        "babel-polyfill": "^6.26.0",
+        "core-js": "^3.6.5",
+        "crypto-js": "^4.0.0",
+        "dayjs": "^1.11.3",
+        "gm-crypt": "0.0.2",
+        "js-cookie": "^3.0.0",
+        "js-md5": "^0.7.3",
+        "less": "^3.12.2",
+        "less-loader": "^7.0.2",
+        "lodash": "^4.17.21",
+        "vue": "^2.6.11",
+        "vue-i18n": "^8.22.0",
+        "vue-router": "2.8.0",
+        "vuex": "^3.5.1"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-angular": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
+        "@vue/babel-plugin-transform-vue-jsx": "^1.4.0",
+        "@vue/cli-plugin-babel": "~4.4.0",
+        "@vue/cli-plugin-eslint": "~4.4.0",
+        "@vue/cli-service": "~4.4.0",
+        "babel-eslint": "^10.1.0",
+        "compression-webpack-plugin": "^6.1.1",
+        "cz-conventional-changelog": "^3.3.0",
+        "element-theme": "^2.0.1",
+        "element-theme-chalk": "^2.13.2",
+        "element-ui": "^2.15.6",
+        "eslint": "^6.7.2",
+        "eslint-config-prettier": "^7.1.0",
+        "eslint-plugin-prettier": "^3.3.0",
+        "eslint-plugin-vue": "^6.2.2",
+        "husky": "^4.3.6",
+        "lint-staged": "^10.5.3",
+        "node-sass": "^4.14.1",
+        "prettier": "^2.2.1",
+        "sass-loader": "^8.0.2",
+        "uglifyjs-webpack-plugin": "^2.2.0",
+        "vue-template-compiler": "^2.6.11"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ],
+    "directories": {
+        "doc": "doc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://gitlab.onesport.com.cn/basecode/frontend/pc.git"
+    },
+    "author": "GXC",
+    "license": "ISC",
+    "__npminstall_done": false
+}

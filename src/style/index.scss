@@ -1,0 +1,7 @@
+@import "./element-reset.css";
+@import "./element-variables.scss";
+
+.el-table tr td:nth-last-of-type(2),
+.table-header th:nth-last-of-type(3) {
+  border-right: 0 !important;
+}
